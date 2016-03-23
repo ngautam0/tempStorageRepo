@@ -1,0 +1,21 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #888;
+    line-height: 30px;
+    text-align: center;
+    background-image: url('../images/1.jpg');
+}
+
+#spinner{
+  opacity:.6;
+  position:fixed;
+  top: 0%;
+  left: 0%;
+  bottom: 0%;
+  right: 0%;
+  background: url("../images/loading.gif") no-repeat center #fff;
+  text-align: center;
+  z-index: 2;
+}
