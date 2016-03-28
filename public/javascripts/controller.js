@@ -1,4 +1,4 @@
-var app = angular.module('altizonApp',['ngRoute','ngAnimate']);
+var app = angular.module('altizonApp');
 
 app.controller('altizonAppCtrl',[
   '$scope',
@@ -48,5 +48,8 @@ app.controller('dashboardsCtrl',[
   '$location',
 
   function($scope,$http) {
-
+    $http({method: 'Get', url: '/logout').
+    success(function(data, status, headers, config) {
+      console.log("logout");
+    });
 }]);
