@@ -7,9 +7,12 @@ app.controller('altizonAppCtrl',[
 
   function($scope,$http,$location) {
   console.log("hello @4");
+  $scope.showLoginScreen=true;
+  $scope.showDashboardsList=false;
+  $scope.showLoginFailed=false;
+
 
   $scope.credentialsSubmitted=function(){
-    $scope.showLoginFailed=false;
 
       if (!$scope.username || $scope.username === ''|| !$scope.password || $scope.password === '' ) {
         return;
@@ -31,25 +34,19 @@ app.controller('altizonAppCtrl',[
             $scope.showLoginFailed=true;
           }
           else {
+            // $location.path('/dashboards');
+            $scope.showLoginScreen=false;
+            $scope.showDashboardsList=true;
+            $scope.things=data["things"];
+            console.log($scope.things);
             console.log("in else part");
-            $location.path('/dashboards');
+
           }
         });
       }
   }
-}]);
+  $scope.logout=function(){
+    window.location.reload();
 
-
-
-
-app.controller('dashboardsCtrl',[
-  '$scope',
-  '$http',
-  '$location',
-
-  function($scope,$http) {
-    $http({method: 'Get', url: '/logout').
-    success(function(data, status, headers, config) {
-      console.log("logout");
-    });
+  }
 }]);

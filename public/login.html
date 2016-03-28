@@ -1,4 +1,4 @@
-<div class="top-content">
+<div class="top-content" ng-show="showLoginScreen">
    <div class="inner-bg">
       <div class="container">
          <div class="row">
@@ -31,6 +31,29 @@
          </div>
       </div>
    </div>
+</div>
+<div ng-show="showDashboardsList">
+  <div class="well well-sm">
+
+    <button class='btn btn-danger pull-right' ng-click="logout()" data-toggle="tooltip" data-placement="left" title="Logout">
+      <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+</button>
+
+    <h2>THINGS</h2>
+    </div>
+
+  <div class="col-sm-3">
+    <div ng-repeat="thing in things">
+          <button type="button" name="button" class="btn btn-block btn-info">{{thing.name}}</button>
+          <p>
+
+          </p>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <span>Listed Are The Things Registered On Your Name... Select / Click On One To View Data</span>
+  </div>
+
 </div>
       <!-- Button trigger modal -->
 <div id="spinner" ng-show="showLoadingScreen">

@@ -1,5 +1,6 @@
 
 jQuery(document).ready(function() {
+  // $(document).off("keydown", disableF5);
 
     /*
         Fullscreen background

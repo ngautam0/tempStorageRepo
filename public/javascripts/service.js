@@ -8,10 +8,10 @@ application.config(['$routeProvider', '$locationProvider', function($routeProvid
         templateUrl: './login.html',
         controller: 'altizonAppCtrl'
       })
-      .when('/dashboards',{
-        templateUrl: './dashboards.html',
-        controller: 'dashboardsCtrl'
-      })
+      // .when('/dashboards',{
+      //   templateUrl: './dashboards.html',
+      //   controller: 'altizonAppCtrl'
+      // })
       .otherwise({redirectTo: '/'});
   }]);
 console.log("3 in route provider");
